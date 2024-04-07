@@ -5,11 +5,20 @@
 </div>
 <div class="content">
     @for (item of port1Data; track $index) {
-    <p>item.insId</p>
+    <div class="main-data">
+        <p>{{ item.insId }}</p>
+        <p>{{ item.quantity }}</p>
+    </div>
     }
-    <p>{{port2Data}}</p>
+    @for (item of port2Data; track $index) {
+    <div class="main-data">
+        <p>{{ item.insId }}</p>
+        <p>{{ item.quantity }}</p>
+    </div>
+    }
 </div>
 <div class="buttons">
     <button (click)="getPort1Data()">show port 1</button>
     <button (click)="getPort2Data()">show port 1</button>
+    <button (click)="updateIdToName()">mw</button>
 </div>

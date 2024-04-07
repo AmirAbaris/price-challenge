@@ -29,4 +29,17 @@ export class PriceTableComponent {
       this.port2Data = res;
     });
   }
+
+  public updateIdToName(): void {
+    if (this.port1Data) {
+      this.dataService.updateIdToName(this.port1Data).subscribe((data) => {
+        this.port1Data = data;
+      });
+    }
+    if (this.port2Data) {
+      this.dataService.updateIdToName(this.port2Data).subscribe((data) => {
+        this.port2Data = data;
+      });
+    }
+  }
 }
