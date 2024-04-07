@@ -20,13 +20,17 @@ export class PriceTableComponent {
 
   public getPort1Data(): void {
     this.dataService.getPortfo1().pipe(takeUntilDestroyed(this.destroyref)).subscribe((res) => {
-      this.port1Data = res;
+      if (!this.port1Data) {
+        this.port1Data = res;
+      }
     });
   }
 
   public getPort2Data(): void {
     this.dataService.getPortfo2().pipe(takeUntilDestroyed(this.destroyref)).subscribe((res) => {
-      this.port2Data = res;
+      if (!this.port2Data) {
+        this.port2Data = res;
+      }
     });
   }
 
