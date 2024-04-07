@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { PriceService } from './services/price.service';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'client';
+  title = 'Just4Test';
+
+  constructor(private price: PriceService) {
+    document.addEventListener('mw-change', (e: any) => {
+      console.log(e.detail);
+    });
+  }
+
+  ngOnInit() { }
 }
